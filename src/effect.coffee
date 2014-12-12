@@ -1,1 +1,1 @@
-class KenBurnsEffect
+angular.module 'ng-ken', []

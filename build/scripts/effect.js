@@ -1,8 +1,1 @@
-var KenBurnsEffect;
-
-KenBurnsEffect = (function() {
-  function KenBurnsEffect() {}
-
-  return KenBurnsEffect;
-
-})();
+angular.module('ng-ken', []);
