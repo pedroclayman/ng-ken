@@ -1,0 +1,4 @@
+.parent {
+  background-color: #ff0000; }
+  .parent .child {
+    border: 1px solid #ff0000; }
