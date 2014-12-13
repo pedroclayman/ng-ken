@@ -7,9 +7,10 @@ concat      = require 'gulp-concat'
 sass        = require 'gulp-sass'
 clean       = require 'gulp-clean'
 minifyCss   = require 'gulp-minify-css'
+rename      = require 'gulp-rename'
 
 
-gulp.task 'compile-coffee', ['clear'], ->
+gulp.task 'compile-coffee', ->
   gulp.src './src/**/*.coffee'
     .pipe coffee bare:true
     .pipe gulp.dest 'build/scripts'
@@ -19,23 +20,23 @@ gulp.task 'compile-coffee', ['clear'], ->
     .pipe concat 'ng-ken.min.js'
     .pipe gulp.dest 'dist/scripts'
 
-gulp.task 'compile-scss', ['clear'], ->
+gulp.task 'compile-scss', ->
   gulp.src './styles/**/*.scss'
    .pipe sass()
    .pipe gulp.dest 'build/styles'
    .pipe concat 'ng-ken.css'
    .pipe gulp.dest 'dist/styles'
    .pipe minifyCss keepBreaks:false
-   .pipe concat 'ng-ken.min.css'
+   .pipe rename 'ng-ken.min.css'
    .pipe gulp.dest 'dist/styles'
 
-gulp.task 'clear', ->
+gulp.task 'clean', ->
   gulp.src './build/**', read:false
     .pipe clean()
   gulp.src './dist/**', read:false
     .pipe clean()
 
-gulp.task 'version', ['clear'], ->
+gulp.task 'version', ->
   pkg = require './package.json'
   stringSrc "version", "#{pkg.name} - #{pkg.version}\n===========================\n#{pkg.description}"
   .pipe(gulp.dest('dist/'))
@@ -44,7 +45,7 @@ gulp.task 'version', ['clear'], ->
 gulp.task 'watch', ->
   gulp.watch './src/**/*.coffee', ['compile-coffee']
 
-gulp.task 'default', ->
+gulp.task 'default', ['clean'], ->
   gulp.start ['compile-coffee', 'compile-scss', 'version']
 
 
