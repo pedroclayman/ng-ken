@@ -12,10 +12,15 @@ describe 'ng-ken: directive', ->
       compile = _$compile_
       rootScope = _$rootScope_
 
-
   beforeEach ->
-    element = compile('<div ken></div>')(rootScope)
+    element = compile('<div ken><img src="" /></div>')(rootScope)
 
   it 'should compile', ->
     expect element
       .not.toBeNull()
+
+  it 'should add CSS classes the element', ->
+    hasClass = element.hasClass 'ken'
+
+    expect hasClass
+      .toBeTruthy()
