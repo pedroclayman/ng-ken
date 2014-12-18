@@ -15,8 +15,9 @@ angular.module('ng-ken', []).directive('ken', function() {
       };
       element.addClass('ken');
       firstChild = getFirstChild();
-      if (firstChild != null) {
-        return firstChild.style.transitionDuration = '10s';
+      if ((scope.options != null) && (scope.options.duration != null) && (firstChild != null)) {
+        console.log(scope.options.duration);
+        return firstChild.style.transitionDuration = scope.options.duration;
       }
     }
   };
