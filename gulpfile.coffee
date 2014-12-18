@@ -41,7 +41,6 @@ gulp.task 'version', ->
   stringSrc "version", "#{pkg.name} - #{pkg.version}\n===========================\n#{pkg.description}"
   .pipe(gulp.dest('dist/'))
 
-
 gulp.task 'watch', ->
   gulp.watch './src/**/*.coffee', ['compile-coffee']
 

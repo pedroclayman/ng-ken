@@ -1,1 +1,1 @@
-.parent{background-color:red}.parent .child{border:1px solid red}
+.ken{overflow:hidden}.ken>*{transform:scale(1.5) translate(100px);transition:transform 5s ease}

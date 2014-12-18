@@ -1,4 +1,5 @@
-.parent {
-  background-color: #ff0000; }
-  .parent .child {
-    border: 1px solid #ff0000; }
+.ken {
+  overflow: hidden; }
+  .ken > * {
+    transform: scale(1.5) translate(100px);
+    transition: transform 5s ease; }

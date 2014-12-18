@@ -1,9 +1,9 @@
-$color: #ff0000;
+.ken {
+  overflow: hidden;
 
-.parent {
-  background-color: $color;
+  > * {
+    transform: scale(1.5);
+    transition: transform 5s ease;
 
-  .child {
-    border: 1px solid $color;
   }
 }
