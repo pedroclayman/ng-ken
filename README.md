@@ -17,7 +17,8 @@ Assuming you have installed node.js and therefore also npm (node package manager
 
 This is going to install all necessary node packages.
 This project uses gulp so just simply run ``gulp`` to build, mininfy the coffee scripts and SCSS files.
-(Currently there's an issue when you try to run the ``gulp`` command where the ``clean`` task tends to fail. Running this task solves the problem. Sorry :( )
+
+(Currently there's an issue when you try to run the ``gulp`` command. The ``clean`` task tends to fail. Rerunning this task solves the problem. Sorry :( )
 
 
 # How to use it
